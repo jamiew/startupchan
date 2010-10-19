@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101019074232) do
+ActiveRecord::Schema.define(:version => 20101019083925) do
 
   create_table "forum_posts", :force => true do |t|
     t.integer  "forum_thread_id"
@@ -18,7 +18,10 @@ ActiveRecord::Schema.define(:version => 20101019074232) do
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "parent_id"
   end
+
+  add_index "forum_posts", ["parent_id"], :name => "index_forum_posts_on_parent_id"
 
   create_table "forum_threads", :force => true do |t|
     t.integer  "forum_id"
