@@ -1,14 +1,11 @@
-= form_for @forum_thread do |f|
-  -if @forum_thread.errors.any?
+= form_for @thread do |f|
+  -if @thread.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@forum_thread.errors.count, "error")} prohibited this forum_thread from being saved:"
+      %h2= "#{pluralize(@thread.errors.count, "error")} prohibited this forum_thread from being saved:"
       %ul
-        - @forum_thread.errors.full_messages.each do |msg|
+        - @thread.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :forum_id
-    = f.text_field :forum_id
   .field
     = f.label :title
     = f.text_field :title

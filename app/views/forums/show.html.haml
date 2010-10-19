@@ -1,12 +1,31 @@
-%p#notice= notice
+-# Hmm this is really the same as Thread#index
+- @threads = @forum.forum_threads
+- if @threads.blank?
+  = image_tag("http://www.biojobblog.com/giant-panda-china-big(1).jpg")
+  %p.empty No threads!
 
-%p
-  %b Name:
-  = @forum.name
-%p
-  %b Slug:
-  = @forum.slug
+%p.new= link_to 'Create New Thread', new_forum_thread_path, :class => 'button'
+%ul.threads
+  - @threads.each do |thread|
+    %li
+      = link_to thread.title, forum_forum_thread_path(@forum, thread)
+      &mdash;
+      %span.created_at= thread.created_at
+      %span.reply= link_to 'Reply', new_forum_post_path(:thread_id => thread.id), :class => 'reply'
+      - if thread.forum_posts.blank?
+        %p
+          No replies...
+          = link_to 'Reply', new_forum_post_path(:thread_id => thread.id), :class => 'reply'
+      %ul.posts
+        - thread.forum_posts.each do |post|
+          %li
+            %span.user= link_to post.user && post.user.name || 'Anonymous', '#'
+            %span.text=h post.text
+            = link_to 'Reply', new_forum_post_path(:thread_id => thread.id, :post_id => post.id), :class => 'reply'
 
-= link_to 'Edit', edit_forum_path(@forum)
-\|
-= link_to 'Back', forums_path
+
+- if is_admin?
+  %p.admin
+    = link_to 'Edit', edit_forum_path(@forum)
+    \|
+    = link_to 'Back', forums_path

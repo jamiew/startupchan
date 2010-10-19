@@ -1,21 +1,19 @@
-%h1 Listing forums
+%h1 Forums
 
 %table
   %tr
     %th Name
-    %th Slug
-    %th
     %th
     %th
 
   - @forums.each do |forum|
     %tr
-      %td= forum.name
-      %td= forum.slug
-      %td= link_to 'Show', forum
-      %td= link_to 'Edit', edit_forum_path(forum)
-      %td= link_to 'Destroy', forum, :confirm => 'Are you sure?', :method => :delete
+      %td.name= link_to forum.name, forum
+      - if is_admin?
+        %td= link_to 'Edit', edit_forum_path(forum)
+        %td= link_to 'Destroy', forum, :confirm => 'Are you sure?', :method => :delete
 
 %br
 
-= link_to 'New Forum', new_forum_path
+- if is_admin?
+  = link_to 'New Forum', new_forum_path

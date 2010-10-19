@@ -1,12 +1,13 @@
-%p#notice= notice
-
 %p
   %b Forum:
-  = @forum_thread.forum_id
+  = @thread.forum_id
 %p
   %b Title:
-  = @forum_thread.title
+  = @thread.title
 
-= link_to 'Edit', edit_forum_thread_path(@forum_thread)
-\|
-= link_to 'Back', forum_threads_path
+
+- if is_admin?
+  %p.admin
+    = link_to 'Edit', edit_forum_thread_path(@thread)
+    \|
+    = link_to 'Back', forum_threads_path

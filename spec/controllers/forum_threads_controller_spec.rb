@@ -9,7 +9,7 @@ describe ForumThreadsController do
   end
 
   describe "GET index" do
-    it "assigns all forum_threads as @forum_threads" do
+    it "assigns all forum_threads as @threads" do
       ForumThread.stub(:all) { [mock_forum_thread] }
       get :index
       assigns(:forum_threads).should eq([mock_forum_thread])
@@ -17,7 +17,7 @@ describe ForumThreadsController do
   end
 
   describe "GET show" do
-    it "assigns the requested forum_thread as @forum_thread" do
+    it "assigns the requested forum_thread as @thread" do
       ForumThread.stub(:find).with("37") { mock_forum_thread }
       get :show, :id => "37"
       assigns(:forum_thread).should be(mock_forum_thread)
@@ -25,7 +25,7 @@ describe ForumThreadsController do
   end
 
   describe "GET new" do
-    it "assigns a new forum_thread as @forum_thread" do
+    it "assigns a new forum_thread as @thread" do
       ForumThread.stub(:new) { mock_forum_thread }
       get :new
       assigns(:forum_thread).should be(mock_forum_thread)
@@ -33,7 +33,7 @@ describe ForumThreadsController do
   end
 
   describe "GET edit" do
-    it "assigns the requested forum_thread as @forum_thread" do
+    it "assigns the requested forum_thread as @thread" do
       ForumThread.stub(:find).with("37") { mock_forum_thread }
       get :edit, :id => "37"
       assigns(:forum_thread).should be(mock_forum_thread)
@@ -43,7 +43,7 @@ describe ForumThreadsController do
   describe "POST create" do
 
     describe "with valid params" do
-      it "assigns a newly created forum_thread as @forum_thread" do
+      it "assigns a newly created forum_thread as @thread" do
         ForumThread.stub(:new).with({'these' => 'params'}) { mock_forum_thread(:save => true) }
         post :create, :forum_thread => {'these' => 'params'}
         assigns(:forum_thread).should be(mock_forum_thread)
@@ -57,7 +57,7 @@ describe ForumThreadsController do
     end
 
     describe "with invalid params" do
-      it "assigns a newly created but unsaved forum_thread as @forum_thread" do
+      it "assigns a newly created but unsaved forum_thread as @thread" do
         ForumThread.stub(:new).with({'these' => 'params'}) { mock_forum_thread(:save => false) }
         post :create, :forum_thread => {'these' => 'params'}
         assigns(:forum_thread).should be(mock_forum_thread)
@@ -81,7 +81,7 @@ describe ForumThreadsController do
         put :update, :id => "37", :forum_thread => {'these' => 'params'}
       end
 
-      it "assigns the requested forum_thread as @forum_thread" do
+      it "assigns the requested forum_thread as @thread" do
         ForumThread.stub(:find) { mock_forum_thread(:update_attributes => true) }
         put :update, :id => "1"
         assigns(:forum_thread).should be(mock_forum_thread)
@@ -95,7 +95,7 @@ describe ForumThreadsController do
     end
 
     describe "with invalid params" do
-      it "assigns the forum_thread as @forum_thread" do
+      it "assigns the forum_thread as @thread" do
         ForumThread.stub(:find) { mock_forum_thread(:update_attributes => false) }
         put :update, :id => "1"
         assigns(:forum_thread).should be(mock_forum_thread)

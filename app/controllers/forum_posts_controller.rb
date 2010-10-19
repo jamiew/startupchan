@@ -44,7 +44,7 @@ class ForumPostsController < ApplicationController
 
     respond_to do |format|
       if @forum_post.save
-        format.html { redirect_to(@forum_post, :notice => 'Forum post was successfully created.') }
+        format.html { redirect_to(@forum_post.forum, :notice => 'Forum post was successfully created.') }
         format.xml  { render :xml => @forum_post, :status => :created, :location => @forum_post }
       else
         format.html { render :action => "new" }

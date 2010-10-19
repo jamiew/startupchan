@@ -20,6 +20,6 @@ Youbeweed::Application.routes.draw do
   #     end
   #   end
 
-  root :to => "forums#index"
+  root :to => "forums#show", :id => 1
 
 end
