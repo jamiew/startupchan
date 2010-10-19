@@ -1,0 +1,21 @@
+%h1 Listing forum_threads
+
+%table
+  %tr
+    %th Forum
+    %th Title
+    %th
+    %th
+    %th
+
+  - @forum_threads.each do |forum_thread|
+    %tr
+      %td= forum_thread.forum_id
+      %td= forum_thread.title
+      %td= link_to 'Show', forum_thread
+      %td= link_to 'Edit', edit_forum_thread_path(forum_thread)
+      %td= link_to 'Destroy', forum_thread, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Forum thread', new_forum_thread_path

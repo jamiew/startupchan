@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Forum:
+  = @forum_thread.forum_id
+%p
+  %b Title:
+  = @forum_thread.title
+
+= link_to 'Edit', edit_forum_thread_path(@forum_thread)
+\|
+= link_to 'Back', forum_threads_path
