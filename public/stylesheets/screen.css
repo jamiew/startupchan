@@ -11,13 +11,15 @@
 #header { background-color: #696; color: #fff; padding: 1.5em 2em 0em; }
 #header #logo { float: left; }
 #header h1 { color: white; font-size: 2em; font-family: "Franklin Gothic", "Courier"; text-transform: uppercase; padding: 0; margin: 0; }
-#header h1 a { color: #4c3; text-decoration: none; }
-#header h1 a:hover { background-color: transparent; color: #f0f; }
+#header h1 a { color: #efe; text-decoration: none; }
+#header h1 a:hover { background-color: transparent; color: #ffa; }
 #header h2.byline { color: white; font-size: 1.2em; font-weight: normal; font-family: serif; font-style: italic; }
 
 #header #navigation { text-align: right; }
+#header #navigation .email { font-family: serif; font-style: italic; font-size: 12pt; }
 #header #navigation ul li { display: inline; }
 #header #navigation ul li a { background-color: #fff; padding: 5px 10px; color: #000; text-decoration: none; border: 1px solid #f0f; }
+#header #navigation ul li a:hover { background-color: #ffa; }
 
 #footer { font-size: 8pt; color: #ccc; margin-top: 7em; padding: 1em 1em; text-align: right; }
 #footer a { color: #aaa; }

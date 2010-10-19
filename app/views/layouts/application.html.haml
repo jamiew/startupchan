@@ -13,7 +13,7 @@
       #navigation
         %ul
           - if !current_user.nil? # logged_in?
-            %email= current_user.email
+            %span.email= current_user.email
             == &nbsp;
             %li.settings= link_to 'settings', edit_user_password_path
             == /
