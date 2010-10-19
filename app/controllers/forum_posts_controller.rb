@@ -40,6 +40,8 @@ class ForumPostsController < ApplicationController
   # POST /forum_posts
   # POST /forum_posts.xml
   def create
+
+    params[:forum_post] && params[:forum_post][:parent_id] = params[:thread_id].to_i
     @forum_post = ForumPost.new(params[:forum_post])
 
     respond_to do |format|
