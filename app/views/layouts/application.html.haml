@@ -27,10 +27,11 @@
     #actions
       #search= render :partial => 'layouts/search_form'
       #links= yield :actions
-    - if (notice && !notice.empty?) || (alert && !alert.empty?)
-      #flash
-        .notice= notice
-        .alert= alert
+
+    - if notice && !notice.empty?
+      .flash.notice= notice
+    - if alert && !alert.empty?
+      .flash.alert= alert
 
     #content
       = yield

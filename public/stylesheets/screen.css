@@ -15,7 +15,6 @@
 #header #navigation { text-align: right; margin-top: -6px; }
 #header #navigation .email { font-family: serif; font-style: italic; font-size: 12pt; }
 #header #navigation ul li { display: inline; font-size: 10pt; }
-/*#header #navigation ul li a { padding: 3px 3px 4px; text-decoration: none; background-color: #f0f070; color: #888; border: 1px solid #ddd; margin-right: 2px; margin-left: 2px; }*/
 #header #navigation ul li a { padding: 2px 0px 1px; text-decoration: none; color: #fff; margin-right: 5px; margin-left: 2px; border-bottom: 1px dotted #a0a0a0; font-family: "Andale Monaco", serif; font-size: 12pt; }
 #header #navigation ul li a:hover { background-color: #ffa; color: #444; }
 
@@ -23,9 +22,9 @@
 #footer a { color: #aaa; }
 
 /* Sub-header */
-#flash { padding: 1em 2em; }
-#flash .notice { background-color: #ffe; color: #555; }
-#flash .error { background-color: #eaa; color: #fff; }
+.flash { padding: 1em 2em; }
+.flash.notice  { background-color: #ffe; color: #555; }
+.flash.alert   { background-color: #eaa; color: #fff; }
 
 #actions { background-color: #eee; height: 34px; overflow: hidden; border-bottom: 1px solid #bbb; }
 #actions #search { float: right; padding: 7px 10px 0 0; }
