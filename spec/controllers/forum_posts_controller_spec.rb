@@ -5,6 +5,7 @@ describe ForumPostsController do
   def mock_forum_post(stubs={})
     (@mock_forum_post ||= mock_model(ForumPost).as_null_object).tap do |forum_post|
       forum_post.stub(stubs) unless stubs.empty?
+      forum_post.parent_id ||= 0
     end
   end
 

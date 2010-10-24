@@ -1,6 +1,11 @@
 Youbeweed::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users do
+    get "/login"    => "devise/sessions#new", :as => 'login'
+    get "/signup"   => "devise/registrations#new", :as => 'signup'
+    get "/logout"   => "devise/sessions#destroy", :as => 'logout'
+    get "/settings" => "devise/passwords#edit", :as => 'settings'
+  end
 
   resources :forums do
     resources :forum_threads do
@@ -8,9 +13,17 @@ Youbeweed::Application.routes.draw do
     end
   end
 
-  # Dupes for tests...
+  # Dupes to make existing tests pass...
   resources :forum_threads
-  resources :forum_posts
+  resources :forum_posts do
+    get :sticky, :on => :member, :via => [:put]
+  end
+
+  controller :home do
+    get '/about', :action => 'about', :as => 'about'
+    get '/privacy', :action => 'privacy', :as => 'privacy'
+    get '/tos', :action => 'tos', :as => 'tos'
+  end
 
   # Sample resource route with more complex sub-resources
   #   resources :products do
