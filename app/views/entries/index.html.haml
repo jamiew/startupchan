@@ -1,0 +1,23 @@
+%h1 Community Database
+
+- content_for :actions do
+  .new= link_to 'Create New Entry', new_entry_path
+
+- if @entries.blank?
+  %p.empty No entries yet!
+
+- else
+  %table
+    %tr
+      %th Name
+      %th Summary
+
+    - @entries.each do |entry|
+      %tr
+        %td= entry.name
+        %td= entry.slug
+        %td= entry.text
+        %td= entry.summary
+        - if is_admin?
+          %td= link_to 'Edit', edit_entry_path(entry)
+          %td= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete

@@ -1,5 +1,7 @@
 Youbeweed::Application.routes.draw do
 
+  resources :entries
+
   devise_for :users do
     get "/login"    => "devise/sessions#new", :as => 'login'
     get "/signup"   => "devise/registrations#new", :as => 'signup'
@@ -7,6 +9,7 @@ Youbeweed::Application.routes.draw do
     get "/settings" => "devise/passwords#edit", :as => 'settings'
   end
 
+  get "/forum" => "forums#show", :id => 1, :as => 'main_forum'
   resources :forums do
     resources :forum_threads do
       resources :forum_posts

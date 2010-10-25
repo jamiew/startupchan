@@ -14,6 +14,7 @@ class ForumsController < ApplicationController
   # GET /forums/1.xml
   def show
     @forum = Forum.find(params[:id])
+    @threads = @forum.forum_threads.order('created_at DESC')
 
     respond_to do |format|
       format.html # show.html.erb

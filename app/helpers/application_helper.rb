@@ -9,19 +9,22 @@ module ApplicationHelper
 
 
   def format_post_text(text)
-    parsed = text
 
-    # Parse wikilinks
-    parsed.gsub!( /\[\[(.+)\]\]/, link_to('WIKILINK', "/$1") )
+    # Fully escape & strip HTML
+    # parsed = text.humanize
+    parsed = strip_tags(text)
+
+    # Parse entrylinks
+    regex = /\[\[(.+)\]\]/
+    if parsed =~ regex
+      parsed = parsed.gsub(regex, "<a href=\"/entries/#{$1}\">#{$1}</a>")
+    end
 
     # Expand images (ends with jpg/gif/png)
     # TODO
 
     # Expand videos (youtube.com/vimeo.com links)
     # TODO
-
-    # Humanize & strip escaped HTML
-    parsed = parsed.humanize
 
     return parsed
   end

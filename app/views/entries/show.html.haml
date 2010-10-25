@@ -1,0 +1,19 @@
+.back= link_to '&larr; Back to entries list'.html_safe, entries_path
+.centered.half
+  %h1.name
+    Entry:
+    %em= @entry.name
+
+  - if !@entry.summary.blank?
+    %p.summary
+      = @entry.summary
+
+  %p.text
+    - if @entry.text.blank?
+      %p.empty No content!
+    - else
+      = @entry.text
+
+  = link_to 'Edit', edit_entry_path(@entry)
+  \|
+  = link_to 'Back', entries_path
