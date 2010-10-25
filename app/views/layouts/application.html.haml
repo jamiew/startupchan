@@ -13,9 +13,6 @@
           Anonymous community board
           = link_to 'more info..', about_path, :class => 'read_more'
       #navigation
-        #sections
-          = link_to 'Forum', main_forum_path, :class => 'main'
-          = link_to 'Database', entries_path, :class => 'main'
         %ul
           - if !current_user.nil? # logged_in?
             %span.email== logged-in
@@ -28,8 +25,13 @@
       %br.clear
 
     #actions
-      #search= render :partial => 'layouts/search_form'
-      #links= yield :actions
+      #sections
+        = link_to 'Forum', main_forum_path, :class => 'main'+(request.request_uri =~ /forum/ ? ' current' : '')
+        = link_to 'Database', entries_path, :class => 'main'+(request.request_uri =~ /entries/ ? ' current' : '')
+      #search
+        = render :partial => 'layouts/search_form'
+      #links
+        = yield :actions
 
     - if notice && !notice.empty?
       .flash.notice= notice

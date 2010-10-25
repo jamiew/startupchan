@@ -22,8 +22,8 @@
         - thread.forum_posts.each do |post|
           %li
             %span.text= format_post_text(post.text)
-            = link_to 'Link', forum_post_path(:thread_id => thread.id, :post_id => post.id), :class => 'action permalink', :title => "Permalink to this specific post"
-            = link_to 'Sticky', sticky_forum_post_path(:thread_id => thread.id, :post_id => post.id), :class => 'action sticky', :title => "Sticky this post to the top. Easier to keep an eye on it"
+            = link_to '#', forum_post_path(:thread_id => thread.id, :post_id => post.id), :class => 'action permalink', :title => "Permalink to this specific post"
+            / = link_to 'Sticky', sticky_forum_post_path(:thread_id => thread.id, :post_id => post.id), :class => 'action sticky', :title => "Sticky this post to the top. Easier to keep an eye on it"
             = link_to 'Reply', new_forum_post_path(:thread_id => thread.id, :post_id => post.id), :class => 'action reply', :title => "Reply to this post"
 
 - if is_admin?

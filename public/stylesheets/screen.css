@@ -21,10 +21,6 @@
 #header #navigation ul li a { padding: 2px 0px 1px; text-decoration: none; color: #fff; margin-right: 5px; margin-left: 2px; border-bottom: 1px dotted #a0a0a0; font-family: "Andale Monaco", serif; font-size: 12pt; }
 #header #navigation ul li a:hover { background-color: #ffa; color: #444; }
 
-#header #sections { float: left; margin-left: 30px; margin-top: 15px; }
-#header #sections a { color: #fff; background-color: #575; padding: 36px 5px 12px; margin: 0 8px 0 0; text-decoration: none; }
-#header #sections a:hover { background-color: #7a7; }
-
 #footer { font-size: 8pt; color: #ccc; margin-top: 7em; padding: 1em 1em; text-align: right; }
 #footer a { color: #aaa; }
 
@@ -41,15 +37,13 @@
 #actions #links a { display: inline; margin-right: 5px; font-size: 9pt; background-color: #F0F070; color: #555; border: 1px solid #cfcfcf; padding: 5px 5px 3px; text-decoration: none; font-weight: bold; font-family: sans-serif; }
 #actions #links a:hover { background-color: #ffa; color: #444; }
 
-#actions #links .section { display: inline; margin-right: 15px; }
-#actions #links .section a.main { border: 0; padding: 0; background: transparent; color: #22c; }
-#actions #links .section.current a.main { color: #aaa; }
-#actions #links .section.forums { }
-#actions #links .section.entries { }
-
+#actions #sections { float: left; margin-left: 30px; margin-top: 12px; margin-right: 10px; }
+#actions #sections a { color: #fff; background-color: #ccc; padding: 20px 5px 10px; margin: 0 4px 0 0; text-decoration: none; }
+#actions #sections a.current { background-color: #575; }
+#actions #sections a:hover { background-color: #7a7; }
 
 /* Main */
-#content { padding: 0.5em 4em 0 0.5em; }
+#content { padding: 0.5em 4em 0 0.8em; }
 #content a:hover { background-color: #ffa; color: #555; }
 
 #content .empty { font-size: 16pt; }
@@ -61,6 +55,7 @@
 #content .threads { font-size: 11pt; }
 #content .threads li { line-height: 1.3em; margin-bottom: 20px; }
 #content .threads li a { margin-left: 1px; margin-right: 0px; }
+#content .threads li ul.posts { padding-left: 1.1em; }
 #content .threads li ul.posts li { line-height: 2em; font-size: 8pt; margin: 0; }
 #content .threads li ul.posts li:first-child { margin-top: 0.6em; }
 
