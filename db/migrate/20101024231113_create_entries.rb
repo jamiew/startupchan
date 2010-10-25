@@ -5,6 +5,8 @@ class CreateEntries < ActiveRecord::Migration
       t.string :slug
       t.text :text
       t.text :summary
+      t.integer :created_by
+      t.integer :updated_by
 
       t.timestamps
     end

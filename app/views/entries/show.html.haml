@@ -1,8 +1,7 @@
 .back= link_to '&larr; Back to entries list'.html_safe, entries_path
 .centered.half
-  %h1.name
-    Entry:
-    %em= @entry.name
+
+  %h1.name= @entry.name
 
   - if !@entry.summary.blank?
     %p.summary
