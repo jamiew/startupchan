@@ -18,6 +18,13 @@ $(document).ready(function(){
   // Faceboxify
   $('a[rel*=facebox]').facebox();
 
+  // Show post reply & sticky controls on hover
+  $('.posts li').hover(function(){ 
+    $(this).find('.post_meta').show().css('display', 'inline');
+  }, function(){
+    $(this).find('.post_meta').hide();
+  });
+  
   // Hijax all remote links & forms
   // TODO
 
