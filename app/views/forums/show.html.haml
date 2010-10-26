@@ -1,28 +1,30 @@
--# Hmm this is really the same as Thread#index
-- @threads = @forum.forum_threads
 - if @threads.blank?
   = image_tag("http://www.biojobblog.com/giant-panda-china-big(1).jpg")
   %p.empty No threads!
 
-%p.new= link_to 'Create New Thread', new_forum_thread_path, :class => 'button'
-%ul.threads
+- content_for :actions do
+  = link_to 'Refresh', "javascript:location.reload(true);", :class => 'button refresh'
+  = link_to 'New Post', new_forum_thread_path, :class => 'button new'
+
+
+%ol.threads
   - @threads.each do |thread|
     %li
       = link_to thread.title, forum_forum_thread_path(@forum, thread)
-      &mdash;
-      %span.created_at= thread.created_at
-      %span.reply= link_to 'Reply', new_forum_post_path(:thread_id => thread.id), :class => 'reply'
+      %span.meta.reply.thread_reply= link_to 'Reply', new_forum_post_path(:thread_id => thread.id), :class => 'reply'
+      %span.meta.reply_count== #{thread.forum_posts.count} replies
+      %span.meta.created_at
+        %abbr{:title => thread.created_at.strftime("%b %d, %Y at %I:%M%p %Z")}== #{time_ago_in_words(thread.created_at)} ago
+
       - if thread.forum_posts.blank?
-        %p
-          No replies...
-          = link_to 'Reply', new_forum_post_path(:thread_id => thread.id), :class => 'reply'
+        / No posts yet
       %ul.posts
         - thread.forum_posts.each do |post|
           %li
-            %span.user= link_to post.user && post.user.name || 'Anonymous', '#'
-            %span.text=h post.text
-            = link_to 'Reply', new_forum_post_path(:thread_id => thread.id, :post_id => post.id), :class => 'reply'
-
+            %span.text= format_post_text(post.text)
+            = link_to '#', forum_post_path(:thread_id => thread.id, :post_id => post.id), :class => 'action permalink', :title => "Permalink to this specific post"
+            / = link_to 'Sticky', sticky_forum_post_path(:thread_id => thread.id, :post_id => post.id), :class => 'action sticky', :title => "Sticky this post to the top. Easier to keep an eye on it"
+            = link_to 'Reply', new_forum_post_path(:thread_id => thread.id, :post_id => post.id), :class => 'action reply', :title => "Reply to this post"
 
 - if is_admin?
   %p.admin

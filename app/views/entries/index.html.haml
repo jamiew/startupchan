@@ -1,0 +1,24 @@
+- content_for :actions do
+  .new= link_to 'Create New Entry', new_entry_path
+
+- if @entries.blank?
+  %p.empty No entries yet!
+
+- else
+  -# TODO rename from threads -> somethingelse
+  %ol.threads
+    - @entries.each do |entry|
+      %li
+        %strong= link_to entry.name, entry_path(entry)
+        - unless entry.summary.blank?
+          %span= entry.summary
+        %span.meta.comment_count== #{entry.comments.count} comments
+        %span.meta.created_at
+          created
+          - unless entry.creator.nil?
+            by
+            = link_to entry.creator.id, user_path(entry.creator), :class => 'username'
+          %abbr{:title => entry.created_at.strftime("%b %d, %Y at %I:%M%p %Z")}== #{time_ago_in_words(entry.created_at)} ago
+        - if is_admin?
+          %td= link_to 'Edit', edit_entry_path(entry)
+          %td= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete
