@@ -5,7 +5,7 @@ class ForumPostsController < ApplicationController
     @forum_posts = ForumPost.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.xml  { render :xml => @forum_posts }
     end
   end
@@ -16,7 +16,7 @@ class ForumPostsController < ApplicationController
     @forum_post = ForumPost.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :layout => !request.xhr? }
       format.xml  { render :xml => @forum_post }
     end
   end
@@ -27,7 +27,7 @@ class ForumPostsController < ApplicationController
     @forum_post = ForumPost.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render :layout => !request.xhr? }
       format.xml  { render :xml => @forum_post }
     end
   end
@@ -35,6 +35,7 @@ class ForumPostsController < ApplicationController
   # GET /forum_posts/1/edit
   def edit
     @forum_post = ForumPost.find(params[:id])
+     render :layout => !request.xhr?
   end
 
   # POST /forum_posts

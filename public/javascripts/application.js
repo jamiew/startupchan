@@ -16,7 +16,7 @@ $(document).ready(function(){
   $("tr:odd").css("background-color", "#111");
 
   // Faceboxify
-  // TODO
+  $('a[rel*=facebox]').facebox();
 
   // Hijax all remote links & forms
   // TODO
