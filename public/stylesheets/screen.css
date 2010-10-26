@@ -35,8 +35,8 @@
 
 #actions { background-color: #eee; height: 34px; overflow: hidden; /*border-bottom: 1px solid #bbb;*/ }
 #actions #links { float: left; padding: 7px 0 0 5px; }
-#actions #links a { display: inline; margin-right: 5px; font-size: 9pt; background-color: #F0F070; color: #555; border: 1px solid #cfcfcf; padding: 5px 5px 3px; text-decoration: none; font-weight: bold; font-family: sans-serif; }
-#actions #links a:hover { background-color: #ffa; color: #444; }
+#actions #links a, a.yellow.button { display: inline; margin-right: 5px; font-size: 9pt; background-color: #F0F070; color: #555; border: 1px solid #cfcfcf; padding: 5px 5px 3px; text-decoration: none; font-weight: bold; font-family: sans-serif; }
+#actions #links a:hover, a.yellow.button:hover { background-color: #ffa; color: #444; }
 
 #actions .sections { float: left; margin-left: 30px; margin-top: 12px; margin-right: 10px; }
 #actions .sections a { color: #fff; background-color: #ccc; padding: 20px 10px 10px; margin: 0 4px 0 0; text-decoration: none; font-size: 12pt; font-family: "Geneva", "Helvetica", serif; }

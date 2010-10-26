@@ -1,5 +1,7 @@
-- content_for :sidebar do
+- content_for :actions do
+  .new= link_to 'Create New Entry', new_entry_path
 
+- content_for :sidebar do
   .recent_threads
     %h3 Recent Threads
     %ul
