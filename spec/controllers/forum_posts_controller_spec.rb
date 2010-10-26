@@ -4,6 +4,7 @@ describe ForumPostsController do
 
   def mock_forum_post(stubs={})
     (@mock_forum_post ||= mock_model(ForumPost).as_null_object).tap do |forum_post|
+      forum_post.forum_id = 1
       forum_post.stub(stubs) unless stubs.empty?
     end
   end
@@ -44,7 +45,7 @@ describe ForumPostsController do
 
     describe "with valid params" do
       it "assigns a newly created forum_post as @forum_post" do
-        ForumPost.stub(:new).with({'these' => 'params'}) { mock_forum_post(:save => true) }
+        ForumPost.stub(:new).with({'these' => 'params', 'parent_id' => 0}) { mock_forum_post(:save => true) }
         post :create, :forum_post => {'these' => 'params'}
         assigns(:forum_post).should be(mock_forum_post)
       end
@@ -58,7 +59,7 @@ describe ForumPostsController do
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved forum_post as @forum_post" do
-        ForumPost.stub(:new).with({'these' => 'params'}) { mock_forum_post(:save => false) }
+        ForumPost.stub(:new).with({'these' => 'params', 'parent_id' => 0}) { mock_forum_post(:save => false) }
         post :create, :forum_post => {'these' => 'params'}
         assigns(:forum_post).should be(mock_forum_post)
       end
