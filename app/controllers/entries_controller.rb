@@ -37,7 +37,7 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to(@entry, :notice => 'Entry was successfully created.') }
+        format.html { redirect_to(@entry, :notice => 'Created!') }
         format.xml  { render :xml => @entry, :status => :created, :location => @entry }
       else
         format.html { render :action => "new" }
@@ -49,7 +49,7 @@ class EntriesController < ApplicationController
   def update
     respond_to do |format|
       if @entry.update_attributes(params[:entry])
-        format.html { redirect_to(@entry, :notice => 'Entry was successfully updated.') }
+        format.html { redirect_to(@entry, :notice => 'Updated!') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
