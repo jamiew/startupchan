@@ -1,5 +1,7 @@
-%h1 New Post
+- unless request.xhr?
+  %h1 New Post
 
 = render 'form'
 
-= link_to 'Back', forum_posts_path
+- unless request.xhr?
+  = link_to 'Back', forum_posts_path

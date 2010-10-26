@@ -1,7 +1,8 @@
 
 .centered.half
-  %h3 This is gonna be a great thread! We're super excited
+  %h3 This is gonna be great!
 
   = render 'form'
 
-  = link_to 'Back', forum_threads_path
+  - unless request.xhr?
+    = link_to 'Back', forum_threads_path

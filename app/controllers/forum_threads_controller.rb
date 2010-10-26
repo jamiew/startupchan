@@ -28,7 +28,7 @@ class ForumThreadsController < ApplicationController
     @thread = ForumThread.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render :layout => !request.xhr? }
       format.xml  { render :xml => @thread }
     end
   end
@@ -36,6 +36,7 @@ class ForumThreadsController < ApplicationController
   # GET /forum_threads/1/edit
   def edit
     @thread = ForumThread.find(params[:id])
+    render :layout => !request.xhr?
   end
 
   # POST /forum_threads

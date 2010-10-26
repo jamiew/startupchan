@@ -6,8 +6,16 @@
         - @thread.errors.full_messages.each do |msg|
           %li= msg
 
+  :javascript
+    // Slight delay on focus for facebox
+    $(document).ready(function(){
+      setTimeout(function(){
+        $("input#title").focus();
+      }, 100);
+    });
+
   .field
-    = f.label :title
-    = f.text_field :title
+    / = f.label :title, 'Post'
+    = f.text_field :title, :size => 70, :id => 'title', :class => "focus"
   .actions
     = f.submit 'Save'

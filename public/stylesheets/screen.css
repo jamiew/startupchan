@@ -1,7 +1,7 @@
 .clear { clear: both; }
 .centered { margin: 0 auto; }
 .half { width: 49%; }
-.third { width: 32%; }
+#facebox .half { width: 100%; } /* lame reset */
 
 /* Layout */
 

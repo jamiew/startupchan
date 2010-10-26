@@ -6,11 +6,20 @@
         - @forum_post.errors.full_messages.each do |msg|
           %li= msg
 
-  -# ghetto FIXME
-  = f.hidden_field :forum_thread_id, :value => params[:thread_id].to_i
+  :javascript
+    // Slight delay on focus for facebox
+    $(document).ready(function(){
+      setTimeout(function(){
+        $("#text").focus();
+      }, 100);
+    });
+
 
   .field
+    -# ghetto FIXME
+    = f.hidden_field :forum_thread_id, :value => params[:thread_id].to_i
+
     = f.label :text
-    = f.text_area :text, :rows => 3, :columns => 50
+    = f.text_field :text, :size => 70, :id => "text", :class => "focus"
   .actions
     = f.submit 'Post'
