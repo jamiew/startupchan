@@ -1,7 +1,9 @@
 class EntriesController < ApplicationController
 
-  before_filter :find_entry, :only => [:show, :new, :edit, :update, :destroy]
+  before_filter :get_entry, :only => [:show, :edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, :with => :create_new_entry_prompt
+
+
   def index
     @entries = Entry.all
 
@@ -69,7 +71,7 @@ class EntriesController < ApplicationController
   protected
 
   # Lookup entry by numeric ID or name string
-  def find_entry
+  def get_entry
     id = params[:id]
     if /\A\d+\z/.match(id)
       @entry = Entry.find(id)
@@ -79,9 +81,11 @@ class EntriesController < ApplicationController
     raise ActiveRecord::RecordNotFound if @entry.nil?
   end
 
+  # Don't throw a 404 -- let people create a new entry!
   def create_new_entry_prompt
     name = params[:id]
     @entry = Entry.new(:name => name)
+    logger.info "create_new_entry_prompt...?"
     flash[:notice] = "An entry for #{name.inspect} doesn't exist yet! Go ahead and create it now..."
     render 'new', :name => name
   end

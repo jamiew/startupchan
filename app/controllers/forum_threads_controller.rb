@@ -1,4 +1,5 @@
 class ForumThreadsController < ApplicationController
+
   # GET /forum_threads
   # GET /forum_threads.xml
   def index

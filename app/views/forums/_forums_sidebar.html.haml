@@ -1,0 +1,7 @@
+- content_for :sidebar do
+  / %h3 All Entries
+  - if @recent_entries.blank?
+    %p.empty== No entries yet... why don't you #{link_to('start one', new_entry_path)}
+  %ul.all_entries
+    - @recent_entries.each do |entry|
+      %li= link_to entry.name, entry_path(entry)

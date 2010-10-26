@@ -21,6 +21,10 @@
 #header #navigation ul li a { padding: 2px 0px 1px; text-decoration: none; color: #fff; margin-right: 5px; margin-left: 2px; border-bottom: 1px dotted #a0a0a0; font-family: "Andale Monaco", serif; font-size: 12pt; }
 #header #navigation ul li a:hover { background-color: #ffa; color: #444; }
 
+#header #search { float: right; padding: 7px 10px 0 20px; }
+#header #search input#q { color: #aaa; font-size: 8pt; }
+
+
 #footer { font-size: 8pt; color: #ccc; margin-top: 7em; padding: 1em 1em; text-align: right; }
 #footer a { color: #aaa; }
 
@@ -29,18 +33,16 @@
 .flash.notice  { background-color: #ffe; color: #555; }
 .flash.alert   { background-color: #eaa; color: #fff; }
 
-#actions { background-color: #eee; height: 34px; overflow: hidden; border-bottom: 1px solid #bbb; }
-#actions #search { float: right; padding: 7px 10px 0 0; }
-#actions #search input#q { color: #aaa; font-size: 8pt; }
-
-#actions #links { padding: 7px 0 0 15px; }
+#actions { background-color: #eee; height: 34px; overflow: hidden; /*border-bottom: 1px solid #bbb;*/ }
+#actions #links { float: left; padding: 7px 0 0 5px; }
 #actions #links a { display: inline; margin-right: 5px; font-size: 9pt; background-color: #F0F070; color: #555; border: 1px solid #cfcfcf; padding: 5px 5px 3px; text-decoration: none; font-weight: bold; font-family: sans-serif; }
 #actions #links a:hover { background-color: #ffa; color: #444; }
 
-#actions #sections { float: left; margin-left: 30px; margin-top: 12px; margin-right: 10px; }
-#actions #sections a { color: #fff; background-color: #ccc; padding: 20px 5px 10px; margin: 0 4px 0 0; text-decoration: none; }
-#actions #sections a.current { background-color: #575; }
-#actions #sections a:hover { background-color: #7a7; }
+#actions .sections { float: left; margin-left: 30px; margin-top: 12px; margin-right: 10px; }
+#actions .sections a { color: #fff; background-color: #ccc; padding: 20px 10px 10px; margin: 0 4px 0 0; text-decoration: none; font-size: 12pt; font-family: "Geneva", "Helvetica", serif; }
+#actions .sections a:hover { background-color: #7a7; }
+#actions .sections a.current { background-color: #fff; color: #222; border-bottom: 0; }
+#actions .sections a.current:hover { background-color: #fff; color: #7a7; }
 
 /* Main */
 #content { padding: 0.5em 4em 0 0.8em; }
@@ -70,3 +72,20 @@
 #content .threads a.permalink { color: #399; }
 
 
+/* Left-right pane styles... shoutouts to #newtwitter */
+
+#sidebar { background-color: #f9f9f9; font-size: 8pt; padding: 20px 5px 0 5px; }
+#sidebar a { font-weight: normal; font-size: 8pt; }
+
+#container.forums #content { width: 75%; border-right: 5px solid #f3f3f3; }
+#actions .sections.entries { width: 17%; float: right; }
+#container.forums #sidebar { width: 17%; float: right; overflow: hidden; }
+#container.forums #sidebar p { padding-left: 5px; }
+
+#container.entries #content { margin-left: 18%; width: 72%; padding-left: 30px; border-left: 5px solid #f3f3f3; min-height: 20em; }
+#container.entries #actions #links { float: right; }
+#container.entries #sidebar { width: 17%; float: left; overflow: hidden; }
+
+#sidebar .recent_threads ul { padding-left: 15px; }
+#sidebar .recent_threads li { margin-bottom: 5px; }
+#sidebar .recent_threads li a {  }

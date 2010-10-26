@@ -1,0 +1,8 @@
+- content_for :sidebar do
+
+  .recent_threads
+    %h3 Recent Threads
+    %ul
+      - @recent_threads.each do |thread|
+        %li
+          %strong= link_to truncate(thread.title), main_forum_path+"##{thread.id}"
