@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Bboard
+    %title Startupchan
     = stylesheet_link_tag :all
     = stylesheet_link_tag '/facebox/facebox'
     = javascript_include_tag :defaults, '/facebox/facebox'
@@ -9,9 +9,9 @@
   %body
     #header
       #logo
-        %h1= link_to 'Bboard', root_path
+        %h1= link_to 'Startupchan', root_path
         %h2.byline
-          Anonymous community board & database
+          Anonymous forum & community database
           = link_to 'more info..', about_path, :class => 'read_more'
       #search
         = render :partial => 'layouts/search_form'
