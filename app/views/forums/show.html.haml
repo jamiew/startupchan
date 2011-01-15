@@ -8,8 +8,9 @@
   - @threads.each do |thread|
     %li{:id => "thread-#{thread.id}"}
       = link_to thread.title, forum_forum_thread_path(@forum, thread)
-      %span.meta.reply.thread_reply= link_to 'Reply', new_forum_post_path(:thread_id => thread.id), :class => 'reply', :rel => 'facebox'
-      %span.meta.reply_count== #{thread.forum_posts.count} replies
+      %span.meta.reply.thread_reply
+        = link_to 'Reply', new_forum_post_path(:thread_id => thread.id), :class => 'reply', :rel => 'facebox'
+        %span.reply_count== (#{thread.forum_posts.count})
       %span.meta.created_at
         %abbr{:title => thread.created_at.strftime("%b %d, %Y at %I:%M%p %Z")}== #{time_ago_in_words(thread.created_at)} ago
 
