@@ -6,14 +6,14 @@
 require 'bundler/capistrano'
 
 set :application, 'bboard'
-set :deploy_to, "/home/jamie/#{application}"
+set :deploy_to, "/home/jamie/startupchan"
 set :scm,        :git
 set :repository, "git@github.com:jamiew/#{application}.git"
 set :branch,     "origin/master"
 
-role :app,  "oneglove.org", :primary => true
-role :web,  "oneglove.org", :primary => true
-role :db,   "oneglove.org", :primary => true
+role :app, "startupchan.com", :primary => true
+role :web, "startupchan.com", :primary => true
+role :db,  "startupchan.com", :primary => true
 
 set :migrate_target, :current
 set :use_sudo, false
