@@ -1,4 +1,4 @@
-Youbeweed::Application.routes.draw do
+Bboard::Application.routes.draw do
 
   resources :entries
 

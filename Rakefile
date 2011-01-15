@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Youbeweed::Application.load_tasks
+Bboard::Application.load_tasks

@@ -1,4 +1,4 @@
-Youbeweed::Application.configure do
+Bboard::Application.configure do
   # Settings specified here will take precedence over those in config/environment.rb
 
   # The production environment is meant for finished, "live" apps.
@@ -37,7 +37,7 @@ Youbeweed::Application.configure do
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 
-  config.action_mailer.default_url_options = { :host => 'youbeweed.com' }
+  config.action_mailer.default_url_options = { :host => 'Bboard.com' }
 
   # Enable threaded mode
   # config.threadsafe!

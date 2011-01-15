@@ -5,7 +5,7 @@
 
 require 'bundler/capistrano'
 
-set :application, 'youbeweed'
+set :application, 'bboard'
 set :deploy_to, "/home/jamie/#{application}"
 set :scm,        :git
 set :repository, "git@github.com:jamiew/#{application}.git"
