@@ -6,7 +6,7 @@
 
 %ol.threads
   - @threads.each do |thread|
-    %li{:id => "thread-#{thread.id}"}
+    %li{:id => "thread-#{thread.id}", :value => thread.id}
       = link_to thread.title, forum_forum_thread_path(@forum, thread)
       %span.meta.reply.thread_reply
         = link_to 'Reply', new_forum_post_path(:thread_id => thread.id), :class => 'reply', :rel => 'facebox'
