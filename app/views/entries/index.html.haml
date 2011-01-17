@@ -1,11 +1,12 @@
-= render :partial => 'entries_sidebar'
+- content_for :actions do
+  = link_to 'Create New Entry', new_entry_path
 
 - if @entries.blank?
   %p.empty No entries yet!
 
 - else
   -# TODO rename from threads -> somethingelse
-  %ol.threads
+  %ol.threads.entries
     - @entries.each do |entry|
       %li
         %strong= link_to entry.name, entry_path(entry)

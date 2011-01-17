@@ -1,4 +1,6 @@
-= render :partial => 'forums_sidebar'
+- content_for :actions do
+  = link_to 'Refresh', "javascript:location.reload(true);", :class => 'button refresh'
+  = link_to 'New Post', new_forum_thread_path, :class => 'button new', :rel => 'facebox'
 
 - if @threads.blank?
   = image_tag("http://www.biojobblog.com/giant-panda-china-big(1).jpg")

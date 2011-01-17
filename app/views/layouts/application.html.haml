@@ -28,27 +28,21 @@
       %br.clear
 
     #container{:class => params[:controller]}
-      #actions
-        .sections.forum
+      #sections
+        .section.forum
           = link_to 'Forum', main_forum_path, :class => 'main'+(params[:controller] =~ /forum/ ? ' current' : '')
-        - if params[:controller] =~ /forum/
-          #links= yield :actions
-        .sections.entries
+        .section.entries
           = link_to 'Database', entries_path, :class => 'main'+(params[:controller] =~ /entries/ ? ' current' : '')
-        - if params[:controller] =~ /entries/
-          #links= yield :actions
 
       - if notice && !notice.empty?
         .flash.notice= notice
       - if alert && !alert.empty?
         .flash.alert= alert
 
-      - sidebar = yield(:sidebar)
-      - if !sidebar.blank?
-        #sidebar
-          = sidebar
-
+      #sidebar
+        = render :partial => 'layouts/sidebar'
       #content
+        #actions= yield :actions
         = yield
 
     #footer

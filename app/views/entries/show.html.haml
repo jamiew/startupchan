@@ -1,22 +1,21 @@
-= render :partial => 'entries_sidebar'
+#entry
+  .back= link_to '&larr; Back to entries list'.html_safe, entries_path
 
-.back= link_to '&larr; Back to entries list'.html_safe, entries_path
+  / FIXME
 
-/ FIXME
+  %h2.name{:style => 'margin-bottom: 0; padding: 10px 0 3px 0;'}= @entry.name
+  %span.url= link_to entry_url(@entry), entry_url(@entry)
 
-%h2.name{:style => 'margin-bottom: 0; padding: 10px 0 3px 0;'}= @entry.name
-%span.url= link_to entry_url(@entry), entry_url(@entry)
+  - if !@entry.summary.blank?
+    .summary
+      = @entry.summary
 
-- if !@entry.summary.blank?
-  .summary
-    = @entry.summary
+  .body
+    - if @entry.text.blank?
+      %p.empty No content!
+    - else
+      = @entry.text
 
-.body
-  - if @entry.text.blank?
-    %p.empty No content!
-  - else
-    = @entry.text
-
-= link_to 'Edit', edit_entry_path(@entry)
-\|
-= link_to 'Back', entries_path
+  = link_to 'Edit', edit_entry_path(@entry)
+  \|
+  = link_to 'Back', entries_path
