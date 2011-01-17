@@ -8,6 +8,7 @@ gem 'capistrano'
 gem 'unicorn'
 
 gem 'devise'
+gem 'paperclip'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'will_paginate'
 gem 'system_timer'
