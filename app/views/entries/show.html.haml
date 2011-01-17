@@ -8,10 +8,10 @@
 %span.url= link_to entry_url(@entry), entry_url(@entry)
 
 - if !@entry.summary.blank?
-  %p.summary
+  .summary
     = @entry.summary
 
-%p.text
+.body
   - if @entry.text.blank?
     %p.empty No content!
   - else

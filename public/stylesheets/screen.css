@@ -25,7 +25,7 @@
 #header #search input#q { color: #aaa; font-size: 8pt; }
 
 
-#footer { font-size: 8pt; color: #ccc; margin-top: 7em; padding: 1em 1em; text-align: right; }
+#footer { clear: both; font-size: 8pt; color: #ccc; margin-top: 7em; padding: 1em 1em; text-align: right; }
 #footer a { color: #aaa; }
 
 /* Sub-header */
@@ -33,13 +33,13 @@
 .flash.notice  { background-color: #ffe; color: #555; }
 .flash.alert   { background-color: #eaa; color: #fff; }
 
-#actions { background-color: #334; height: 34px; overflow: hidden; /*border-bottom: 1px solid #bbb;*/ }
+#actions { background-color: #334; height: 34px; overflow: hidden; padding-left: 12px; }
 #actions #links { float: left; padding: 7px 0 0 5px; }
 #actions #links a, a.yellow.button { display: inline; margin-right: 5px; font-size: 9pt; background-color: #F0F070; color: #555; border: 1px solid #cfcfcf; padding: 5px 5px 3px; text-decoration: none; font-weight: bold; font-family: sans-serif; }
 #actions #links a:hover, a.yellow.button:hover { background-color: #ffa; color: #444; }
 
-#actions .sections { float: left; margin-left: 12px; margin-top: 8px; margin-right: 10px; }
-#actions .sections a { color: #fff; font-weight: bold; padding: 20px 10px 10px; margin: 0 4px 0 0; text-decoration: none; font-size: 12pt; font-family: sans-serif; }
+#actions .sections { float: left; margin-top: 8px; margin-right: 10px; }
+#actions .sections a { color: #fff; font-weight: bold; padding: 10px 10px 10px; margin: 0; text-decoration: none; font-size: 12pt; font-family: sans-serif; }
 #actions .sections a:hover { background-color: transparent; color: #ffa; }
 #actions .sections a.current { background-color: #fff; color: #222; border-bottom: 0; }
 #actions .sections a.current:hover { background-color: #fff; color: #7a7; }
@@ -54,19 +54,18 @@
 
 #content .new { margin: 1em 0em 3em; }
 
-#content .threads { font-size: 11pt; }
+/*#content .threads { font-size: 11pt; }*/
 #content .threads li { line-height: 1.3em; margin-bottom: 20px; }
 #content .threads li a { margin-left: 1px; margin-right: 0px; }
 #content .threads li ul.posts { padding-left: 1em; }
 #content .threads li ul.posts li { line-height: 2em; font-size: 8pt; margin: 0; list-style: disc; }
-#content .threads li ul.posts li:first-child { margin-top: 0.6em; }
+#content .threads li ul.posts li:first-child { margin-top: 0.2em; }
 
 #content .threads .reply.thread_reply a { font-size: 8pt; font-weight: bold; text-decoration: none; border-bottom: 1px dotted #faf; }
 #content .threads span.meta { color: #c4c4c4; font-size: 8pt; margin-left: 4px; }
 #content .threads span.reply_count { color: #999; }
 #content .threads span.created_at { visibility: hidden; }
 #content .threads li:hover span.created_at { visibility: visible; }
-
 
 #content .threads a.action { font-weight: normal; text-decoration: none; font-size: 7pt; border-bottom: 1px dotted #faf; }
 #content .threads a.reply { color: #993; }
@@ -77,18 +76,26 @@
 #sidebar { background-color: #f9f9f9; font-size: 8pt; padding: 20px 5px 0 5px; }
 #sidebar a { font-weight: normal; font-size: 8pt; }
 
-#container.forums #content { width: 75%; border-right: 5px solid #f3f3f3; }
-#actions .sections.entries { width: 17%; float: right; }
-#container.forums #sidebar { width: 17%; float: right; overflow: hidden; }
-#container.forums #sidebar p { padding-left: 5px; }
+#container #content { width: 75%; }
+#container #sidebar { width: 17%; float: right; overflow: hidden; padding-left: 20px; border: 5px solid #f3f3f3; border-top: 0; border-right: 0; }
+#container #sidebar p { padding-left: 5px; }
 
-#container.entries #content { margin-left: 18%; width: 72%; padding-left: 30px; border-left: 5px solid #f3f3f3; min-height: 20em; }
-#container.entries #actions #links { float: right; }
-#container.entries #sidebar { width: 17%; float: left; overflow: hidden; }
+/*#container.forums #content { width: 75%; border-right: 5px solid #f3f3f3; }*/
+/*#actions .sections.entries { width: 17%; float: right; }*/
+/*#container.forums #sidebar { width: 17%; float: right; overflow: hidden; }*/
+/*#container.forums #sidebar p { padding-left: 5px; }*/
+
+/*#container.entries #content { margin-left: 18%; width: 72%; padding-left: 30px; border-left: 5px solid #f3f3f3; min-height: 20em; }*/
+/*#container.entries #actions #links { float: right; }*/
+/*#container.entries #sidebar { width: 17%; float: left; overflow: hidden; }*/
 
 #sidebar .recent_threads ul { padding-left: 15px; }
 #sidebar .recent_threads li { margin-bottom: 5px; }
 #sidebar .recent_threads li a {  }
+
+/* Entries-specific */
+#container.entries #content { padding: 1.5em 0 0 1.5em; }
+.entries .summary, .entries .body { width: 420px; margin: 1.5em 0; }
 
 /* Misc */
 .static_page { width: 500px; padding-left: 15px; }

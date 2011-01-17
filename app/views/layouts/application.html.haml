@@ -34,7 +34,7 @@
         - if params[:controller] =~ /forum/
           #links= yield :actions
         .sections.entries
-          = link_to 'Entries', entries_path, :class => 'main'+(params[:controller] =~ /entries/ ? ' current' : '')
+          = link_to 'Database', entries_path, :class => 'main'+(params[:controller] =~ /entries/ ? ' current' : '')
         - if params[:controller] =~ /entries/
           #links= yield :actions
 
