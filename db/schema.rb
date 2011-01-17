@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101025063206) do
+ActiveRecord::Schema.define(:version => 20110117003819) do
 
   create_table "comments", :force => true do |t|
     t.integer  "entry_id"
@@ -29,6 +29,10 @@ ActiveRecord::Schema.define(:version => 20101025063206) do
     t.integer  "updated_by"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
   end
 
   create_table "forum_posts", :force => true do |t|
