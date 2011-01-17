@@ -1,0 +1,13 @@
+.recent_threads
+  %h3 Updated Entries
+  %ul
+    - @recent_entries.each do |entry|
+      %li
+        %strong= link_to truncate(entry.name), entries_path(entry)
+
+.recent_threads
+  %h3 Forum Threads
+  %ul
+    - @recent_threads.each do |thread|
+      %li
+        %strong= link_to truncate(thread.title), main_forum_path+"##{thread.id}"
