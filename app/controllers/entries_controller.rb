@@ -68,9 +68,9 @@ class EntriesController < ApplicationController
   end
 
 
-  protected
+protected
 
-  # Lookup entry by numeric ID or name string
+  # Lookup entry by numeric ID -or- slug string
   def get_entry
     id = params[:id]
     if /\A\d+\z/.match(id)

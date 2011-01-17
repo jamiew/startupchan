@@ -1,20 +1,19 @@
 #entry
   .back= link_to '&larr; Back to entries list'.html_safe, entries_path
 
-  / FIXME
-
+  %p.icon= image_tag(@entry.icon.url(:medium))
   %h2.name{:style => 'margin-bottom: 0; padding: 10px 0 3px 0;'}= @entry.name
   %span.url= link_to entry_url(@entry), entry_url(@entry)
 
   - if !@entry.summary.blank?
     .summary
-      = @entry.summary
+      = auto_link(simple_format(sanitize(@entry.summary, :tags => Entry::ALLOWED_HTML)))
 
   .body
     - if @entry.text.blank?
       %p.empty No content!
     - else
-      = @entry.text
+      = auto_link(simple_format(sanitize(@entry.text, :tags => Entry::ALLOWED_HTML)))
 
   = link_to 'Edit', edit_entry_path(@entry)
   \|
