@@ -76,7 +76,7 @@ class EntriesController < ApplicationController
     if /\A\d+\z/.match(id)
       @entry = Entry.find(id)
     else
-      @entry = Entry.find_by_name(id)
+      @entry = Entry.find_by_slug(id)
     end
     raise ActiveRecord::RecordNotFound if @entry.nil?
   end
