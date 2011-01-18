@@ -71,8 +71,7 @@ abbr { border-color: #ddd; }
 #content .threads li { line-height: 1.3em; margin-bottom: 20px; }
 #content .threads li a { margin-left: 1px; margin-right: 0px; }
 #content .threads li ul.posts { padding-left: 1em; }
-#content .threads li ul.posts li { line-height: 2em; font-size: 8pt; margin: 0; list-style: disc; }
-#content .threads li ul.posts li:first-child { margin-top: 0.2em; }
+#content .threads li ul.posts li { line-height: 2em; font-size: 8pt; margin: 0 0 0 8px; list-style: disc; }
 
 #content .threads .reply.thread_reply a { font-size: 8pt; font-weight: bold; text-decoration: none; border-bottom: 1px dotted #faf; }
 #content .threads span.meta { color: #c4c4c4; font-size: 8pt; margin-left: 4px; }
@@ -80,7 +79,7 @@ abbr { border-color: #ddd; }
 #content .threads span.created_at { visibility: hidden; }
 #content .threads li:hover span.created_at { visibility: visible; }
 
-#content .threads a.action { font-weight: normal; text-decoration: none; font-size: 7pt; border-bottom: 1px dotted #faf; }
+#content .threads a.action { font-weight: normal; text-decoration: none; font-size: 7pt; line-height: 7pt; border-bottom: 1px dotted #faf; }
 #content .threads a.reply { color: #993; }
 #content .threads a.sticky { color: #939; }
 #content .threads a.permalink { color: #399; }

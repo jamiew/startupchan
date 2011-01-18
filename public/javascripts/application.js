@@ -2,6 +2,11 @@
 * Wit & Candor
 */
 
+function metaFor(post){
+  var name = '#'+$(post).parent()[0].id+'-meta';
+  return $(name);
+}
+
 $(document).ready(function(){
 
   // Flashes
@@ -19,12 +24,17 @@ $(document).ready(function(){
   $('a[rel*=facebox]').facebox();
 
   // Show post reply & sticky controls on hover
-  $('.posts li').hover(function(){ 
-    $(this).find('.post_meta').show().css('display', 'inline');
+  $('.post_content').hover(function(){
+    metaFor(this).show().css('display', 'inline');
   }, function(){
-    $(this).find('.post_meta').hide();
+    metaFor(this).hide();
   });
-  
+
+  $('.post_content').click(function(){
+    // TODO show the meta & set it as "unhidable" with an attribute
+    // this gives us iPad/iPhone compatibility
+  });
+
   // Hijax all remote links & forms
   // TODO
 
