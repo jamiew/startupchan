@@ -6,6 +6,12 @@ GIT
       builder (~> 2.1.0)
       rails (~> 3.0.3)
 
+GIT
+  remote: http://github.com/rails/exception_notification.git
+  revision: 192a49a02d63d28b23ed41cebadfedd490929cf1
+  specs:
+    exception_notification (1.0.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -131,6 +137,7 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   devise
+  exception_notification!
   factory_girl_generator (>= 0.0.1)
   factory_girl_rails (>= 1.0.0)
   haml-rails
