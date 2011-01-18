@@ -1,3 +1,10 @@
+#error_page {
+  margin: 50px auto;
+  width: 420px;
+  font-size: 13pt;
+  text-align: center;
+}
+
 /* MOVEME error-related shit */
 div.field, div.actions {
   margin-bottom: 10px;
