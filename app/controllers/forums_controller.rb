@@ -22,4 +22,8 @@ class ForumsController < ApplicationController
     end
   end
 
+  def search
+    render :text => "Search is TODO!", :layout => !request.xhr?
+  end
+
 end
