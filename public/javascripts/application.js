@@ -13,7 +13,7 @@ $(document).ready(function(){
   $('.flash').hide().slideToggle('slow');
   setTimeout(function(){
     $('.flash').slideToggle('slow');
-  }, 3000);
+  }, 2000);
 
 
   // Zebrafy table rows

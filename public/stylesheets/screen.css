@@ -42,7 +42,7 @@ abbr { border-color: #ddd; }
 #footer a { color: #aaa; }
 
 /* Sub-header */
-.flash { padding: 1em 2em; }
+.flash { position: absolute; top: 0; width: 95%; text-align: center; opacity: 0.85; font-weight: bold; padding: 0.5em 2em; }
 .flash.notice  { background-color: #ffe; color: #555; }
 .flash.alert   { background-color: #eaa; color: #fff; }
 
