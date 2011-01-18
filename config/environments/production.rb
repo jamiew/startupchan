@@ -39,7 +39,7 @@ Bboard::Application.configure do
 
   # Use sendmail
   config.action_mailer.delivery_method = :sendmail
-  config.action_mailer.default_url_options = { :host => 'startupchan.com' }
+  # config.action_mailer.default_url_options = { :host => 'startupchan.com' }
 
   # Enable threaded mode
   # config.threadsafe!
@@ -50,4 +50,10 @@ Bboard::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  # Email us all exceptions
+  config.middleware.use ::ExceptionNotifier,
+    :email_prefix => "[STARTUPCHAN] ",
+    :sender_address => %{"exception_notifier" <noreply@startupchan.com>},
+    :exception_recipients => %w{jamie@internetofdeath.com}
 end
