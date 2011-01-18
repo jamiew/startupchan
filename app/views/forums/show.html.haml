@@ -20,7 +20,7 @@
         / No posts yet
       - else
         - posts = thread.forum_posts
-        - top_level_posts = posts.select {|fp| fp.parent_id.nil? }.compact
+        - top_level_posts = posts.select {|fp| fp.parent_id.blank? || fp.parent_id == 0 }.compact
         = render :partial => 'forum_posts/posts', :object => top_level_posts, :locals => {:all_posts => posts, :thread => thread}
 - if is_admin?
   %p.admin
