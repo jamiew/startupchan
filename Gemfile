@@ -5,7 +5,6 @@ gem 'mysql'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml-rails'
 gem 'capistrano'
-gem 'unicorn'
 
 gem 'devise'
 gem 'paperclip'
