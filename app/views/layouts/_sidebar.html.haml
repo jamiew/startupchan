@@ -3,7 +3,7 @@
   %ul
     - @recent_entries.each do |entry|
       %li
-        %strong= link_to truncate(entry.name), entries_path(entry)
+        %strong= link_to truncate(entry.name), entry_path(entry)
 
 .recent_threads
   %h3 Forum Threads
