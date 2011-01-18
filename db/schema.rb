@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110117003819) do
+ActiveRecord::Schema.define(:version => 20110118025351) do
 
   create_table "comments", :force => true do |t|
     t.integer  "entry_id"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(:version => 20110117003819) do
     t.datetime "icon_updated_at"
   end
 
+  add_index "entries", ["slug"], :name => "index_entries_on_slug"
+
   create_table "forum_posts", :force => true do |t|
     t.integer  "forum_thread_id"
     t.integer  "user_id"
@@ -44,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20110117003819) do
     t.integer  "parent_id"
   end
 
+  add_index "forum_posts", ["forum_thread_id"], :name => "index_forum_posts_on_forum_thread_id"
   add_index "forum_posts", ["parent_id"], :name => "index_forum_posts_on_parent_id"
 
   create_table "forum_threads", :force => true do |t|
