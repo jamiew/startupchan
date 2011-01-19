@@ -1,5 +1,5 @@
 class Notifier < ActionMailer::Base
-  default :from => "startupchan@gmail.com"
+  default :from => "noreply@vhx.tv"
 
   # Sending this to admins right now, not the actual user who signed up (!)
   def user_signup_notification(user)
