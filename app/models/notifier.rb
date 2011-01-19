@@ -3,7 +3,7 @@ class Notifier < ActionMailer::Base
 
   # Sending this to admins right now, not the actual user who signed up (!)
   def user_signup_notification(user)
-    mail(:to => "jamie@internetofdeath.com", :subject => "Startupchan user signup") do |format|
+    mail(:to => "jamie@tramchase.com", :subject => "Startupchan user signup") do |format|
        format.text { render :text => "New user! ##{user.id} email=#{user.email.inspect}" }
        # format.html { render :text => "<h1>This is HTML</h1>" }
      end

@@ -54,5 +54,5 @@ Bboard::Application.configure do
   config.middleware.use ::ExceptionNotifier,
     :email_prefix => "[STARTUPCHAN] ",
     :sender_address => %{"exception_notifier" <startupchan@gmail.com>},
-    :exception_recipients => %w{jamie@internetofdeath.com}
+    :exception_recipients => %w{jamie@tramchase.com}
 end
