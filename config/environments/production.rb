@@ -53,6 +53,6 @@ Bboard::Application.configure do
   # Email us all exceptions
   config.middleware.use ::ExceptionNotifier,
     :email_prefix => "[STARTUPCHAN] ",
-    :sender_address => %{"exception_notifier" <noreply@startupchan.com>},
+    :sender_address => %{"exception_notifier" <startupchan@gmail.com>},
     :exception_recipients => %w{jamie@internetofdeath.com}
 end
