@@ -51,6 +51,7 @@ abbr { border-color: #ddd; }
 #content #actions a:hover, a.yellow.button:hover { background-color: #ffa; color: #444; }
 
 #sections { background-color: #334; height: 34px; overflow: hidden; padding-left: 12px; }
+#sections { display: none; } /* TEMP hide database link */
 #sections .section { float: left; margin-top: 8px; margin-right: 10px; }
 #sections .section a { color: #fff; font-weight: bold; padding: 10px 10px 10px; margin: 0; text-decoration: none; font-size: 12pt; font-family: sans-serif; }
 #sections .section a:hover { background-color: transparent; color: #ffa; }
@@ -86,6 +87,7 @@ abbr { border-color: #ddd; }
 
 /* Left-right pane styles... shoutouts to #newtwitter */
 #sidebar { background-color: #f9f9f9; font-size: 8pt; padding: 20px 5px 0 5px; }
+#sidebar { display: none; } /* TEMP disable sidebar */
 #sidebar a { font-weight: normal; font-size: 8pt; }
 
 #container #content { width: 75%; }
