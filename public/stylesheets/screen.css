@@ -68,7 +68,7 @@ abbr { border-color: #ddd; }
 
 #content .new { margin: 1em 0em 3em; }
 
-#content .thread { margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #eee; }
+#content .thread { margin-top: 12px; padding-top: 10px; border-top: 1px solid #eee; }
 #content .threads { margin-top: 20px; }
 #content .threads li { font-size: 11px; line-height: 1.8em; }
 #content .threads li .thread_title { font-weight: bold; }
