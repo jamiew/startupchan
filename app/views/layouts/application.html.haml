@@ -53,3 +53,6 @@
       = link_to 'Contact', '/contact'
       == -
       &copy; 2010-2011
+
+- if ::Rails.env == 'production'
+  = render :partial => 'stats'
