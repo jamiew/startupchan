@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
 protected
 
   def get_sidebar_content
-    @recent_threads = ForumThread.order('created_at DESC').limit(5)
-    @recent_entries = Entry.order('name DESC').limit(5)
+    # TEMP disabledf for now
+    @recent_threads = [] #ForumThread.order('created_at DESC').limit(5)
+    @recent_entries = [] #Entry.order('name DESC').limit(5)
   end
 end
