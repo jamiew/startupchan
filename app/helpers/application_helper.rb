@@ -12,7 +12,10 @@ module ApplicationHelper
 
     # Fully escape & strip HTML
     # parsed = text.humanize
-    parsed = strip_tags(text)
+    parsed = sanitize(text)
+
+    # Linkfiy
+    parsed = auto_link(parsed, :all, :rel => "nofollow")
 
     # Parse entrylinks
     regex = /\[\[(.+)\]\]/
