@@ -9,7 +9,7 @@ Bboard::Application.routes.draw do
     get "/settings" => "users#edit", :as => 'settings'
   end
 
-  get "/forum" => "forums#show", :id => 1, :as => 'main_forum'
+  # get "/forum" => "forums#show", :id => 1
   resources :forums do
     resources :forum_threads do
       resources :forum_posts
@@ -39,6 +39,6 @@ Bboard::Application.routes.draw do
   #     end
   #   end
 
-  root :to => "forums#show", :id => 1
+  root :to => "forums#show", :id => 1, :as => 'main_forum'
 
 end
