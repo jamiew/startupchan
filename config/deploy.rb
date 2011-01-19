@@ -10,6 +10,7 @@ set :deploy_to, "/home/jamie/startupchan"
 set :scm,        :git
 set :repository, "git@github.com:jamiew/#{application}.git"
 set :branch,     "origin/master"
+set :website,    "http://startupchan.com"
 
 role :app, "startupchan.com", :primary => true
 role :web, "startupchan.com", :primary => true
@@ -75,6 +76,7 @@ namespace :deploy do
   desc "Restart passenger with restart.txt"
   task :restart, :except => { :no_release => true } do
     run "touch #{current_path}/tmp/restart.txt"
+    run "curl --silent #{website} >/dev/null"
   end
 
   namespace :rollback do
