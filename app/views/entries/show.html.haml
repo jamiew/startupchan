@@ -14,7 +14,8 @@
       %p.empty No content!
     - else
       = auto_link(simple_format(sanitize(@entry.text, :tags => Entry::ALLOWED_HTML)))
-
-  = link_to 'Edit', edit_entry_path(@entry)
-  \|
-  = link_to 'Back', entries_path
+  - if current_user && current_user.can_edit?(@entry)
+    %p
+      = link_to 'Edit', edit_entry_path(@entry)
+      \|
+      = link_to 'Back', entries_path

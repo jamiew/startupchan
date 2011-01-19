@@ -8,6 +8,8 @@
   %b Text:
   = @forum_post.text
 
-= link_to 'Edit', edit_forum_post_path(@forum_post)
-\|
-= link_to 'Back', forum_posts_path
+- if is_admin?
+  %p
+    = link_to 'Edit', edit_forum_post_path(@forum_post)
+    \|
+    = link_to 'Back', forum_posts_path
