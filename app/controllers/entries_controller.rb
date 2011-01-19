@@ -30,6 +30,7 @@ class EntriesController < ApplicationController
   end
 
   def edit
+    raise PermissionDenied unless current_user && current_user.can_edit?(@entry)
   end
 
   def create
@@ -47,6 +48,7 @@ class EntriesController < ApplicationController
   end
 
   def update
+    raise PermissionDenied unless current_user && current_user.can_edit?(@entry)
     respond_to do |format|
       if @entry.update_attributes(params[:entry])
         format.html { redirect_to(@entry, :notice => 'Updated!') }
@@ -59,6 +61,7 @@ class EntriesController < ApplicationController
   end
 
   def destroy
+    raise PermissionDenied unless is_admin?
     @entry.destroy
 
     respond_to do |format|

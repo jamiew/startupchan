@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
 
   after_create :send_email
 
+  def can_edit?(entry)
+    user.admin? || entry.creator == self
+  end
+
 protected
 
   def send_email
