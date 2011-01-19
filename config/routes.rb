@@ -10,6 +10,7 @@ Bboard::Application.routes.draw do
   end
 
   # get "/forum" => "forums#show", :id => 1
+  redirect '/forum' => '/'
   resources :forums do
     resources :forum_threads do
       resources :forum_posts
