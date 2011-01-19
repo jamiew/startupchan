@@ -73,7 +73,9 @@ abbr { border-color: #ddd; }
 #content .threads li { font-size: 11px; line-height: 1.8em; }
 #content .threads li .thread_title { font-weight: bold; }
 #content .threads li .text { }
-#content .threads li a { color: #333377; text-decoration: none; margin-left: 1px; margin-right: 0px; }
+#content .threads li .text:hover { cursor: pointer; }
+#content .threads li a { color: #303079; text-decoration: none; margin-left: 1px; margin-right: 0px; }
+#content .threads li .posts a { border-bottom: 1px dotted #ddd; }
 #content .threads li ul.posts { padding-left: 1em; }
 #content .threads li ul.posts li { margin: 0 0 0 8px; list-style: disc; }
 

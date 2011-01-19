@@ -31,7 +31,7 @@ $(document).ready(function(){
 
   // Show (and leave) meta controls on click... iOS doesn't have hover
   // Unbind hover actions so mouse movements don't hide it  
-  $('.post_content a.text').click(function(){
+  $('.post_content .text').click(function(){
     $(this).parent().unbind('mouseenter mouseleave');
     metaFor($(this).parent()).css('display', 'inline');
     return false;
