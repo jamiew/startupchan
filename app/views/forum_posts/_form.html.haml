@@ -19,7 +19,6 @@
     = f.hidden_field :forum_thread_id, :value => params[:thread_id].to_i
     = f.hidden_field :parent_id, :value => params[:parent_id].to_i
 
-    = f.label :text
     = f.text_field :text, :size => 70, :id => "text", :class => "focus"
   .actions
     = f.submit 'Post'
