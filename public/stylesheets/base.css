@@ -1,9 +1,11 @@
 #error_page {
   margin: 50px auto;
-  width: 420px;
+  width: 500px;
   font-size: 13pt;
   text-align: center;
 }
+
+#error_page h1 { line-height: 1em; }
 
 /* MOVEME error-related shit */
 div.field, div.actions {
