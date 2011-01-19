@@ -2,7 +2,7 @@
   - posts.each do |post|
     %li{:id => "post-#{post.id}"}
       .post_content
-        %span.text= format_post_text(post.text)
+        %a.text= format_post_text(post.text)
         .post_meta{:id => "post-#{post.id}-meta", :style => 'display: none;'}
           = link_to '#', forum_post_path(:thread_id => thread.id, :post_id => post.id), :class => 'action permalink', :title => "Permalink to this specific post"
           / = link_to 'Sticky', sticky_forum_post_path(:thread_id => thread.id, :post_id => post.id), :class => 'action sticky', :title => "Sticky this post to the top. Easier to keep an eye on it"
