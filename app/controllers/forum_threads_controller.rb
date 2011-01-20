@@ -49,7 +49,7 @@ class ForumThreadsController < ApplicationController
 
     respond_to do |format|
       if @thread.save
-        format.html { redirect_to(@thread.forum, :notice => 'Forum thread was successfully created.') }
+        format.html { redirect_to(main_forum_path, :notice => 'Thread started.') }
         format.xml  { render :xml => @thread, :status => :created, :location => @thread }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class ForumThreadsController < ApplicationController
   # # PUT /forum_threads/1.xml
   # def update
   #   @thread = ForumThread.find(params[:id])
-  # 
+  #
   #   respond_to do |format|
   #     if @thread.update_attributes(params[:forum_thread])
   #       format.html { redirect_to(@thread, :notice => 'Forum thread was successfully updated.') }
@@ -73,13 +73,13 @@ class ForumThreadsController < ApplicationController
   #     end
   #   end
   # end
-  # 
+  #
   # # DELETE /forum_threads/1
   # # DELETE /forum_threads/1.xml
   # def destroy
   #   @thread = ForumThread.find(params[:id])
   #   @thread.destroy
-  # 
+  #
   #   respond_to do |format|
   #     format.html { redirect_to(forum_threads_url) }
   #     format.xml  { head :ok }
