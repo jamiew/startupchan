@@ -78,6 +78,7 @@ abbr { border-color: #ddd; }
 #content .threads li .posts a { border-bottom: 1px dotted #ddd; }
 #content .threads li ul.posts { padding-left: 1em; }
 #content .threads li ul.posts li { margin: 0 0 0 8px; list-style: disc; }
+#content .threads .post_content { line-height: 0.8em; }
 
 #content .threads .reply.thread_reply a { font-size: 8pt; font-weight: bold; text-decoration: none; border-bottom: 1px dotted #faf; }
 #content .threads span.meta { color: #c4c4c4; font-size: 8pt; margin-left: 4px; }
