@@ -12,7 +12,7 @@ module ApplicationHelper
 
     # Fully escape & strip HTML
     # parsed = text.humanize
-    parsed = sanitize(text)
+    parsed = strip_tags(text)
 
     # Linkfiy
     parsed = auto_link(parsed, :all, :rel => "nofollow")
