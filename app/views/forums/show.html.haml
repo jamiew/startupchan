@@ -9,7 +9,7 @@
 %ol.threads
   - @threads.each do |thread|
     %li.thread{:id => "thread-#{thread.id}", :value => thread.id}
-      %span.thread_title= link_to thread.title, forum_forum_thread_path(@forum, thread)
+      %span.thread_title= link_to thread.title, forum_thread_path(thread)
       %span.meta.reply.thread_reply
         = link_to 'Reply', new_forum_post_path(:thread_id => thread.id), :class => 'reply', :rel => 'facebox'
         %span.reply_count== (#{thread.forum_posts.count})

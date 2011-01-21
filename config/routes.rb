@@ -13,8 +13,8 @@ Bboard::Application.routes.draw do
   get "/" => "forums#show", :id => 1, :as => 'main_forum'
   redirect '/forum' => '/'
   resources :forums do
-    resources :forum_threads do
-      resources :forum_posts
+    resources :forum_threads, :path => 'threads' do
+      resources :forum_posts, :path => 'posts'
     end
   end
 
@@ -22,8 +22,8 @@ Bboard::Application.routes.draw do
   get '/search' => 'forums#search'
 
   # Dupes to make existing tests pass... FIXME
-  resources :forum_threads
-  resources :forum_posts do
+  resources :forum_threads, :path => 'threads'
+  resources :forum_posts, :path => 'posts' do
     get :sticky, :on => :member, :via => [:put]
   end
 
