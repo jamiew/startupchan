@@ -34,7 +34,6 @@ $(document).ready(function(){
   $('.post_content .text').click(function(){
     $(this).parent().unbind('mouseenter mouseleave');
     metaFor($(this).parent()).css('display', 'inline');
-    return false;
   });
 
 
