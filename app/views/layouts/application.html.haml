@@ -16,8 +16,9 @@
         %h2.byline
           Anonymous forum & community database
           = link_to 'more info..', about_path, :class => 'read_more'
-      #search
-        = render :partial => 'layouts/search_form'
+      - if false
+        #search
+          = render :partial => 'layouts/search_form'
       #navigation
         %ul
           - if !current_user.nil? # logged_in?
