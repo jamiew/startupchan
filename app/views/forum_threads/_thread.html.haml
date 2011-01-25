@@ -1,0 +1,14 @@
+%li.thread{:id => "thread-#{thread.id}", :value => thread.id}
+  %span.thread_title= link_to thread.title, forum_thread_path(thread)
+  %span.meta.reply.thread_reply
+    = link_to 'Reply', new_forum_post_path(:thread_id => thread.id), :class => 'reply', :rel => 'facebox'
+    %span.reply_count== (#{thread.forum_posts.count})
+  %span.meta.created_at
+    %abbr{:title => thread.created_at.strftime("%b %d, %Y at %I:%M%p %Z")}== #{time_ago_in_words(thread.created_at)} ago
+
+  - if thread.forum_posts.blank?
+    / No posts yet
+  - else
+    - posts = thread.forum_posts
+    - top_level_posts = posts.select {|fp| fp.parent_id.blank? || fp.parent_id == 0 }.compact
+    = render :partial => 'forum_posts/posts', :object => top_level_posts, :locals => {:all_posts => posts, :thread => thread}

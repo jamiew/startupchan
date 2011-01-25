@@ -1,10 +1,5 @@
-%p
-  %b Forum:
-  = @thread.forum_id
-%p
-  %b Title:
-  = @thread.title
-
+%ol.threads
+  = render :partial => 'forum_threads/thread', :object => @thread
 
 - if is_admin?
   %p.admin
