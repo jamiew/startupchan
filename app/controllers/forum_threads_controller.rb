@@ -34,10 +34,11 @@ class ForumThreadsController < ApplicationController
   end
 
   # # GET /forum_threads/1/edit
-  # def edit
-  #   @thread = ForumThread.find(params[:id])
-  #   render :layout => !request.xhr?
-  # end
+  def edit
+    raise PermissionDenied unless is_admin?
+    @thread = ForumThread.find(params[:id])
+    render :layout => !request.xhr?
+  end
 
   # POST /forum_threads
   # POST /forum_threads.xml
@@ -59,30 +60,30 @@ class ForumThreadsController < ApplicationController
   end
 
   # # PUT /forum_threads/1
-  # # PUT /forum_threads/1.xml
-  # def update
-  #   @thread = ForumThread.find(params[:id])
-  #
-  #   respond_to do |format|
-  #     if @thread.update_attributes(params[:forum_thread])
-  #       format.html { redirect_to(@thread, :notice => 'Forum thread was successfully updated.') }
-  #       format.xml  { head :ok }
-  #     else
-  #       format.html { render :action => "edit" }
-  #       format.xml  { render :xml => @thread.errors, :status => :unprocessable_entity }
-  #     end
-  #   end
-  # end
-  #
-  # # DELETE /forum_threads/1
-  # # DELETE /forum_threads/1.xml
-  # def destroy
-  #   @thread = ForumThread.find(params[:id])
-  #   @thread.destroy
-  #
-  #   respond_to do |format|
-  #     format.html { redirect_to(forum_threads_url) }
-  #     format.xml  { head :ok }
-  #   end
-  # end
+  def update
+    raise PermissionDenied unless is_admin?
+    @thread = ForumThread.find(params[:id])
+
+    respond_to do |format|
+      if @thread.update_attributes(params[:forum_thread])
+        format.html { redirect_to(@thread, :notice => 'Forum thread was successfully updated.') }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @thread.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /forum_threads/1
+  def destroy
+    raise PermissionDenied unless is_admin?
+    @thread = ForumThread.find(params[:id])
+    @thread.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(forum_threads_url) }
+      format.xml  { head :ok }
+    end
+  end
 end
