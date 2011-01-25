@@ -12,18 +12,16 @@ Bboard::Application.routes.draw do
   # get "/forum" => "forums#show", :id => 1, :as => 'main_forum'
   get "/" => "forums#show", :id => 1, :as => 'main_forum'
   redirect '/forum' => '/'
-  resources :forums do
-    resources :forum_threads, :path => 'threads' do
-      resources :forum_posts, :path => 'posts'
-    end
+  resources :forums, :except => [:edit, :update, :destroy] do
+    get '/search' => 'forums#search'
+    # resources :forum_threads, :path => 'threads', :except => [:edit, :update, :destroy] do
+    #   resources :forum_posts, :path => 'posts', :except => [:edit, :update, :destroy]
+    # end
   end
 
-  # Search -- forums only for now
-  get '/search' => 'forums#search'
-
   # Dupes to make existing tests pass... FIXME
-  resources :forum_threads, :path => 'threads'
-  resources :forum_posts, :path => 'posts' do
+  resources :forum_threads, :path => 'threads', :except => [:edit, :update, :destroy]
+  resources :forum_posts, :path => 'posts', :except => [:edit, :update, :destroy] do
     get :sticky, :on => :member, :via => [:put]
   end
 
