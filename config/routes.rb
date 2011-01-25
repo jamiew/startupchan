@@ -9,17 +9,13 @@ Bboard::Application.routes.draw do
     get "/settings" => "users#edit", :as => 'settings'
   end
 
-  # get "/forum" => "forums#show", :id => 1, :as => 'main_forum'
   get "/" => "forums#show", :id => 1, :as => 'main_forum'
   redirect '/forum' => '/'
   resources :forums, :except => [:edit, :update, :destroy] do
     get '/search' => 'forums#search'
-    # resources :forum_threads, :path => 'threads', :except => [:edit, :update, :destroy] do
-    #   resources :forum_posts, :path => 'posts', :except => [:edit, :update, :destroy]
-    # end
   end
 
-  # Dupes to make existing tests pass... FIXME
+  # Ghetto shallow-nesting
   resources :forum_threads, :path => 'threads', :except => [:edit, :update, :destroy]
   resources :forum_posts, :path => 'posts', :except => [:edit, :update, :destroy] do
     get :sticky, :on => :member, :via => [:put]
@@ -30,14 +26,6 @@ Bboard::Application.routes.draw do
     get '/privacy', :action => 'privacy', :as => 'privacy'
     get '/tos', :action => 'tos', :as => 'tos'
   end
-
-  # Sample resource route with more complex sub-resources
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', :on => :collection
-  #     end
-  #   end
 
   root :to => "forums#show", :id => 1
 
