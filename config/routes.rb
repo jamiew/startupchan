@@ -16,8 +16,8 @@ Bboard::Application.routes.draw do
   end
 
   # Ghetto shallow-nesting
-  resources :forum_threads, :path => 'threads', :except => [:edit, :update, :destroy]
-  resources :forum_posts, :path => 'posts', :except => [:edit, :update, :destroy] do
+  resources :forum_threads, :path => 'threads', :except => [:index, :edit, :update, :destroy]
+  resources :forum_posts, :path => 'posts', :except => [:index, :show, :edit, :update, :destroy] do
     get :sticky, :on => :member, :via => [:put]
   end
 
