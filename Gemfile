@@ -12,7 +12,6 @@ gem 'haml-rails'
 gem 'paperclip'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'will_paginate'
-gem 'system_timer'
 
 group :development, :test do
   gem "factory_girl_rails", ">= 1.0.0"
