@@ -2,8 +2,6 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-require 'lib/exceptions'
-
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env) if defined?(Bundler)
@@ -48,3 +46,5 @@ module Bboard
     config.filter_parameters += [:password, :password_confirmation]
   end
 end
+
+require RAILS_ROOT+'/lib/exceptions'
