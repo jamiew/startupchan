@@ -47,4 +47,4 @@ module Bboard
   end
 end
 
-require RAILS_ROOT+'/lib/exceptions'
+require "#{::Rails.root}/lib/exceptions"
