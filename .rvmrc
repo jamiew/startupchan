@@ -1,1 +1,1 @@
-rvm gemset use bboard
+rvm use 1.9.2
