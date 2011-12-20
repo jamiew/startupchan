@@ -8,6 +8,11 @@ gem 'haml-rails'
 gem 'paperclip'
 gem 'will_paginate'
 
+group :production do
+  # gem 'mysql'
+  gem 'pg'
+end
+
 group :development, :test do
   gem 'capistrano'
   gem 'factory_girl_rails', '>= 1.0.0'

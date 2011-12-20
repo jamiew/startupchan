@@ -78,6 +78,8 @@ GEM
     paperclip (2.3.8)
       activerecord
       activesupport
+    pg (0.12.0)
+      rake-compiler (~> 0.7)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -98,6 +100,8 @@ GEM
       rake (>= 0.8.7)
       thor (~> 0.14.4)
     rake (0.8.7)
+    rake-compiler (0.7.9)
+      rake
     rspec (2.4.0)
       rspec-core (~> 2.4.0)
       rspec-expectations (~> 2.4.0)
@@ -132,6 +136,7 @@ DEPENDENCIES
   factory_girl_rails (>= 1.0.0)
   haml-rails
   paperclip
+  pg
   rails (~> 3)
   rspec-rails (>= 2.0.0)
   sqlite3
