@@ -7,8 +7,6 @@
     = stylesheet_link_tag '/facebox/facebox'
     = javascript_include_tag :defaults, '/facebox/facebox'
     = csrf_meta_tag
-    - if ::Rails.env == 'production'
-      = render :partial => 'layouts/stats'
   %body
     #header
       #logo
@@ -56,3 +54,6 @@
       = link_to 'Contact', 'mailto:startupchan@gmail.com'
       == -
       == &copy; 2010-#{Time.now.year}
+    - if ::Rails.env == 'production'
+      = render :partial => 'layouts/stats'
+
