@@ -6,6 +6,7 @@ gem 'devise'
 gem 'exception_notification', :require => 'exception_notifier', :git => 'http://github.com/rails/exception_notification.git'
 gem 'haml-rails'
 gem 'paperclip'
+gem 'unicorn'
 gem 'will_paginate'
 
 group :production do
