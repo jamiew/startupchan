@@ -8,7 +8,7 @@ gem 'haml-rails'
 gem 'paperclip'
 gem 'unicorn'
 gem 'will_paginate'
-gem 'heroku'
+gem 'rails_autolink'
 
 group :production do
   # gem 'mysql'
