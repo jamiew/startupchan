@@ -1,5 +1,6 @@
 {
-  "command": "ruby -rubygems -r./custom_plan -eZeus.go",
+  "command": "ruby -rubygems -rzeus/rails -eZeus.go",
+
   "plan": {
     "boot": {
       "default_bundle": {
