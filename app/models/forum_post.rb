@@ -16,7 +16,7 @@ protected
 
   def does_not_contain_links
     return if self.text.blank?
-    if self.text =~ /http(s)?\:\/\// || self.title =~ /\[url\]/
+    if self.text =~ /http(s)?\:\/\// || self.text =~ /\[url\]/
       self.errors.add(:text, 'cannot contain links')
     end
   end
