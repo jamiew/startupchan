@@ -4,7 +4,7 @@ class ForumThread < ActiveRecord::Base
   validates_presence_of :title
   validate :does_not_contain_links
 
-  belongs_to :forum
+  belongs_to :forum, :dependent => :destroy
   has_many :forum_posts
 
 protected

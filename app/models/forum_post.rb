@@ -7,7 +7,7 @@ class ForumPost < ActiveRecord::Base
   validate :does_not_contain_links
 
   belongs_to :user
-  belongs_to :forum_thread
+  belongs_to :forum_thread, :dependent => :destroy, :counter_cache => :posts_count
   has_one :forum, :through => :forum_thread
 
   belongs_to :parent, :class_name => 'ForumPost'
