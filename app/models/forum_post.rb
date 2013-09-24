@@ -1,6 +1,5 @@
 class ForumPost < ActiveRecord::Base
 
-  validates_presence_of :user_id
   validates_presence_of :forum_thread_id
   validates_presence_of :text, :message => "text must not be blank"
   validates_length_of :text, :within => 2..1000, :on => :create, :message => "must be a sane length"
