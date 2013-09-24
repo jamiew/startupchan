@@ -51,8 +51,10 @@ Bboard::Application.configure do
   config.active_support.deprecation = :notify
 
   # Email us all exceptions
-  # config.middleware.use ::ExceptionNotifier,
-  #   :email_prefix => "[STARTUPCHAN] ",
-  #   :sender_address => %{"exception_notifier" <noreply@vhx.tv>},
-  #   :exception_recipients => %w{jamie@tramchase.com}
+  Bboard::Application.config.middleware.use ExceptionNotification::Rack,
+    :email => {
+      :email_prefix => "[Startupchan] ",
+      :sender_address => %{"notifier" <noreply@startupchan.com>},
+      :exception_recipients => %w{jamie@jamiedubs.com}
+    }
 end

@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 3'
 
 gem 'devise'
-gem 'exception_notification', :require => 'exception_notifier', :git => 'http://github.com/rails/exception_notification.git'
+gem 'exception_notification'
 gem 'haml-rails'
 gem 'paperclip'
 gem 'unicorn'
