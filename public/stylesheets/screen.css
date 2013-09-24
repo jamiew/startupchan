@@ -90,6 +90,12 @@ abbr { border-color: #ddd; }
 #content .threads a.sticky { color: #939; }
 #content .threads a.permalink { color: #399; }
 
+#content .pagination { text-align: center; margin-top: 50px; }
+#content .pagination a { background-color: #303079; color: #fff; padding: 3px 4px 4px 4px; text-decoration: none; }
+#content .pagination a:hover { color: #cc3; }
+#content .pagination em.current {  }
+#content .pagination span { }
+
 /* Left-right pane styles... shoutouts to #newtwitter */
 #sidebar { background-color: #f9f9f9; font-size: 8pt; padding: 20px 5px 0 5px; }
 #sidebar { display: none; } /* TEMP disable sidebar */

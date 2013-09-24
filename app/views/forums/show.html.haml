@@ -9,6 +9,9 @@
 %ol.threads
   = render :partial => 'forum_threads/thread', :collection => @threads
 
+.pagination
+  = will_paginate @threads
+
 - if is_admin?
   %p.admin
     = link_to 'Edit', edit_forum_path(@forum)

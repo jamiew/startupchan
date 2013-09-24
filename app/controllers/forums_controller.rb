@@ -15,6 +15,7 @@ class ForumsController < ApplicationController
   def show
     @forum = Forum.find(params[:id])
     @threads = @forum.forum_threads.order('created_at DESC').includes(:forum_posts)
+    @threads = @threads.paginate(per_page: 20, page: params[:page] || 1)
 
     respond_to do |format|
       format.html # show.html.erb
