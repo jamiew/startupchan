@@ -1,5 +1,6 @@
 class ForumThread < ActiveRecord::Base
 
+  validates_presence_of :forum_id
   validates_presence_of :title
   validate :does_not_contain_links
 
