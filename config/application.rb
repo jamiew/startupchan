@@ -44,6 +44,9 @@ module Bboard
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password, :password_confirmation]
+
+    # Heroku asset compilation fix
+    config.assets.initialize_on_precompile = false
   end
 end
 
