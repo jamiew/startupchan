@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 gem 'rails', '~> 3'
 
@@ -11,8 +12,8 @@ gem 'will_paginate'
 gem 'rails_autolink'
 
 group :production do
-  # gem 'mysql'
   gem 'pg'
+  gem 'rails_12factor'
 end
 
 group :development, :test do
