@@ -13,7 +13,7 @@ class ForumPost < ActiveRecord::Base
 protected
 
   def does_not_contain_links
-    if self.comment =~ /http\:\/\//
+    if self.text =~ /http\:\/\//
       self.errors.add(:login, 'cannot start with a number') if self.login && self.login =~ /^\d+/
     end
   end
