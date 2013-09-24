@@ -2,7 +2,8 @@ Bboard::Application.routes.draw do
 
   resources :entries
 
-  devise_for :users do
+  devise_for :users
+  devise_scope :user do
     get "/login"    => "devise/sessions#new", :as => 'login'
     get "/signup"   => "devise/registrations#new", :as => 'signup'
     get "/logout"   => "devise/sessions#destroy", :as => 'logout'
